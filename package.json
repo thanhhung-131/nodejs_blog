@@ -23,16 +23,26 @@
     "url": "https://github.com/thanhhung-131/nodejs_blog/issues"
   },
   "homepage": "https://github.com/thanhhung-131/nodejs_blog#readme",
+  "lint-staged": {
+      "src/**/*.{js,json,scss}": "prettier --single-quote --trailing-comma all --tab--width 4 --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^6.0.7",
-    "express-load": "^1.1.16",
-    "handlebars": "^4.7.7"
+    "express-load": "^1.1.16"
   },
   "devDependencies": {
+    "bootstrap": "^5.3.0-alpha1",
+    "lint-staged": "^13.1.2",
     "morgan": "^1.10.0",
     "node-sass": "^8.0.0",
     "nodemon": "^2.0.20",
-    "bootstrap": "^5.3.0-alpha1"
+    "husky": "^8.0.3",
+    "prettier": "^2.8.4"
   }
 }
