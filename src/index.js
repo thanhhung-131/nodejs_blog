@@ -30,7 +30,10 @@ app.engine(
   'hbs',
   engine({
     extname: '.hbs',
-    handlebars: allowInsecurePrototypeAccess(Handlebars)
+    handlebars: allowInsecurePrototypeAccess(Handlebars),
+    helpers: {
+      sum: (a, b) => a + b
+    }
   }),
 );
 app.set('view engine', 'hbs');
