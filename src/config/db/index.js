@@ -1,11 +1,12 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-async function connect() {
+function connect() {
     try {
+        mongoose.set('strictQuery', false)
         mongoose.connect('mongodb://127.0.0.1:27017/daiki_education_dev')
-  .then(() => console.log('Connected!'));
+        console.log('Connected!')
     } catch (error) {
-        console.log('Failed to connect!')
+        console.log(error)
     }
 }
 
